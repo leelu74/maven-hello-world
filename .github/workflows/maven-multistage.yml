@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       contents: read
       packages: write
@@ -42,7 +42,7 @@ jobs:
       run: |
         docker push shayki/shayki-maven:${{ steps.bump.outputs.jar_version }}
   run:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     needs: [build]
     
     steps:
